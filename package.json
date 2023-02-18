@@ -1,43 +1,22 @@
 {
-  "name": "protiempo",
+  "name": "Calculadora",
   "version": "1.0.0",
-  "description": "Protiempo App backend and frontend",
-  "main": "index.js",
+  "description": "Calculadora de operaciones",
+  "main": "src/index.js",
   "scripts": {
-    "test": "npx jest --detectOpenHandles --forceExit",
-    "start": "node app/index.js",
-    "dev": "nodemon  --inspect app/index.js --ignore 'thunder-test/*.json'"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andresflorez0799/protiempo.git"
+    "url": "git+https://github.com/andresflorez0799/Calculadora.git"
   },
   "keywords": [
-    "protiempo",
-    "tramites",
-    "transito"
+    "landingjs"
   ],
-  "author": "@sampli-software",
-  "license": "ISC",
+  "author": "andresflorez0799",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/andresflorez0799/protiempo/issues"
+    "url": "https://github.com/andresflorez0799/Calculadora/issues"
   },
-  "homepage": "https://github.com/andresflorez0799/protiempo#readme",
-  "dependencies": {
-    "bcrypt": "^5.1.0",
-    "body-parser": "^1.20.1",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "jsonwebtoken": "^9.0.0",
-    "mongoose": "^6.6.7",
-    "nodemon": "^2.0.20",
-    "swagger-jsdoc": "^6.2.5",
-    "swagger-ui-express": "^4.5.0",
-    "vercel": "^19.1.2"
-  },
-  "devDependencies": {
-    "jest": "^29.2.1",
-    "supertest": "^6.3.0"
-  }
+  "homepage": "https://github.com/andresflorez0799/Calculadora#readme"
 }
