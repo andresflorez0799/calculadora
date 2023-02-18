@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Error absoluto</title>
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans mt-20">
+                <div class="bg-green rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
+                    <div class="mb-4">
+                        <h1 class="text-3xl md:text-4xl font-medium mb-2">Calculadora</h1>
+                        <div class="flex mt-4">
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" name="text" id="text" placeholder="Ingrese un número" />
+                            <input type="hidden" id="saveIndex" />
+                            <button class="p-2 lg:px-4 md:mx-2 text-center border border-solid border-indigo-600 rounded text-white bg-indigo-600 transition-colors duration-300 mt-1 md:mt-0 md:ml-1" id="add-number-btn">Agregar</button>
+                            <button class="p-2 lg:px-4 md:mx-2 text-center border border-solid border-indigo-600 rounded bg-indigo-600 text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1" style="display: none" id="save-todo-btn">
+                                Editar
+                            </button>
+                        </div>
+                        <div class="text-1xl md:text-1 text-black-400 font-small mb-2">ERROR ABSOLUTO&nbsp;: <span class="valor" id="error_absoluto"></span></div>
+                        <div class="text-1xl md:text-1 text-black-400 font-small mb-2">ERROR RELATIVO &nbsp;&nbsp;: <span class="valor" id="error_relativo"></span></div>
+                    </div>
+                    <div id="listBox"></div>
+                    <div id="trademark">
+                        <div class="flex flex-6">
+                            <div class="h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10">
+                                <a href="#" class="tooltip">
+                                    <span>Mairon Andres Florez Alvarez</span>
+                                    <img
+                                        decoding="async"
+                                        class="rounded-full bg-zinc-100 object-cover dark:bg-zinc-800 h-9 w-9"
+                                        src="https://lh3.googleusercontent.com/ogw/AAEL6shMrlXkHubnhyqWcDSStGSsoGyuapW8p2VZJX3jhg=s32-c-mo"
+                                        srcset="
+                                            https://lh3.googleusercontent.com/ogw/AAEL6shMrlXkHubnhyqWcDSStGSsoGyuapW8p2VZJX3jhg=s32-c-mo 1x,
+                                            https://lh3.googleusercontent.com/ogw/AAEL6shMrlXkHubnhyqWcDSStGSsoGyuapW8p2VZJX3jhg=s64-c-mo 2x
+                                        "
+                                        alt="" />
+                                </a>
+                            </div>
+                            <div class="h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10">
+                                <a href="#" class="tooltip">
+                                    <span>Karen Ximena Ruiz Perdomo</span>
+                                    <img
+                                        decoding="async"
+                                        class="rounded-full bg-zinc-100 object-cover dark:bg-zinc-800 h-9 w-9"
+                                        src="https://lh3.googleusercontent.com/a-/AD5-WCnTFW8slDY1aueI9sk5oKQryrd6suo9xP-drZZyrQ=s88-w88-h88-c-k"
+                                        class="hy2WD"
+                                        loading="lazy"
+                                        alt="" />
+                                </a>
+                            </div>
+                            <div class="h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10">
+                                <a href="#" class="tooltip">
+                                    <span>Natalia Garcia Florez</span>
+                                    <img
+                                        decoding="async"
+                                        class="rounded-full bg-zinc-100 object-cover dark:bg-zinc-800 h-9 w-9"
+                                        src="https://lh3.googleusercontent.com/a-/AD5-WCkJ5E__NIOoVnkYatCeEnBPEd2IojZ4fdupmSoseVs=s88-w88-h88-c-k"
+                                        class="hy2WD"
+                                        loading="lazy"
+                                        alt="" />
+                                </a>
+                            </div>
+                            <div class="h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10">
+                                <a href="#" class="tooltip">
+                                    <span>Nayi Vanessa Tovar Orjuela</span>
+                                    <img
+                                        decoding="async"
+                                        class="rounded-full bg-zinc-100 object-cover dark:bg-zinc-800 h-9 w-9"
+                                        src="https://lh3.googleusercontent.com/a/AEdFTp7gJhOo8whbLAjoQM0nQUG60j9nL20dmogw9ROG=s88-w88-h88-c-k"
+                                        class="hy2WD"
+                                        loading="lazy"
+                                        alt="" />
+                                </a>
+                            </div>
+                            <div class="h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10">
+                                <a href="#" class="tooltip">
+                                    <span>William Hernando Torres Rodriguez</span>
+                                    <img
+                                        decoding="async"
+                                        class="rounded-full bg-zinc-100 object-cover dark:bg-zinc-800 h-9 w-9"
+                                        src="https://lh3.googleusercontent.com/a-/AD5-WCka44LYkzcmk6CqWZ8FRNQDMEM0qhXdLVazxTMcJg=s88-w88-h88-c-k"
+                                        class="hy2WD"
+                                        loading="lazy"
+                                        alt="" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
