@@ -27,11 +27,11 @@ img{
      display: block;
      z-index: 100;
      background: transparent;
-     left: -66px;
-     margin: 65px;
+     left: -32px;
+     margin: 32px;
      width: 300px;
      position: absolute;
-     top: 0px;
+     top: 16px;
      text-decoration: none;
  }
 
@@ -52,5 +52,5 @@ img{
 
 #trademark{
     padding-top: 32px;
-    padding-bottom: 30px;
+    padding-bottom: 32px;
 }
