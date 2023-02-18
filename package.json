@@ -1,8 +1,8 @@
 {
-  "name": "Calculadora",
+  "name": "calculadora",
   "version": "1.0.0",
   "description": "Calculadora de operaciones",
-  "main": "src/index.js",
+  "main": "src/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
