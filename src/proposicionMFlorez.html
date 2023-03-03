@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Matriz primos</title>
+        <link rel="stylesheet" href="css/index.css" />
+    </head>
+    <body>
+        <div>
+            <h2>Número para validar la matriz de dimension: (n * n): <input id="numero" type="number" /></h2>
+            <p id="sumaEsquinas">suma_numeros_esquinas = <code>n-(n-1) + n + ((n^2)-n-1) + (n^2)</code></p>
+            <p>suma_numeros_esquinas = <code id="valoresEsquinas"></code></p>
+        </div>
+        <div style="display: inline-block" id="cuadrado"></div>
+        <div style="display: inline-block; vertical-align: top">
+            &nbsp;Validacion de matrices de dimension (n*n) menor e igual al numero dado y mayores que 1
+            <ul id="ulPasosValidacion"></ul>
+        </div>
+        <script src="js/util.js"></script>
+        <script src="js/proposicionMFlorez.js"></script>
+    </body>
+</html>
