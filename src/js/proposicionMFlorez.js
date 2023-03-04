@@ -2,6 +2,7 @@ const numero = document.getElementById('numero');
 const sumaEsquinas = document.getElementById('sumaEsquinas');
 const ulPasosValidacion = document.getElementById('ulPasosValidacion');
 const valoresEsquinas = document.getElementById('valoresEsquinas');
+const isCrearGrafica = document.getElementById('isCrearGrafica');
 
 const encontrarSumaEsquinasEsPrimo = (numberFin) => {
     let conteo = 0;
@@ -9,6 +10,7 @@ const encontrarSumaEsquinasEsPrimo = (numberFin) => {
     let sumatoria = 0;
 
     if (!isNaN(numberFin) && numberFin > 1) {
+        divDemostracion.style.display = 'inline-block';
         for (let index = 1; index <= numberFin; index++) {
             sumatoria = sumaEsquinasCuadricula(index);
             esPrimo = isPrimo(sumatoria);
@@ -43,6 +45,7 @@ const crearPasoValidacionItem = (n, vertice_a, vertice_b, vertice_c, vertice_d) 
     if (n > 1) {
         texto += `${vertice_a} + ${vertice_b} + ${vertice_c} + ${vertice_d} = ${suma}`;
         valoresEsquinas.innerHTML = `${n}-(${n}-1) + ${n} + ((${n}^2)-${n}-1) + (${n}^2) entonces ${vertice_a} + ${vertice_b} + ${vertice_c} + ${vertice_d} = <b style='color:red;'> ${suma}</b> ${esPrimo ? ' es Primo' : 'No es Primo'}`;
+        dimensionMatriz.innerHTML = `(n * n) => (${n} * ${n})`;
     }
 
     span.innerHTML = texto;
@@ -62,18 +65,19 @@ const crearCuadricula = (number) => {
         cuadrado.innerHTML = '<h2>El número debe ser una cantidad impar positiva, mayor que uno</h2>';
         valoresEsquinas.innerHTML = 'Matriz no valida, indique un numero mayor';
     } else {
-        for (let index_x = 0; index_x < number; index_x++) {
-            tr = document.createElement('tr');
+        if (isCrearGrafica.checked)
+            for (let index_x = 0; index_x < number; index_x++) {
+                tr = document.createElement('tr');
 
-            for (let index_y = 0; index_y < number; index_y++) {
-                contador += 1;
-                td = document.createElement('td');
-                if (isPrimo(contador)) td.classList.add('IsPrimo');
-                td.innerHTML = contador;
-                tr.appendChild(td);
+                for (let index_y = 0; index_y < number; index_y++) {
+                    contador += 1;
+                    td = document.createElement('td');
+                    if (isPrimo(contador)) td.classList.add('IsPrimo');
+                    td.innerHTML = contador;
+                    tr.appendChild(td);
+                }
+                cuadrado.appendChild(tr);
             }
-            cuadrado.appendChild(tr);
-        }
     }
 };
 

@@ -9,13 +9,17 @@
     </head>
     <body>
         <div>
-            <h2>Número para validar la matriz de dimension: (n * n): <input id="numero" type="number" /></h2>
+            <h2>
+                Número para validar la matriz de dimension (n *n):
+                <input id="numero" type="number" />
+            </h2>
+            Crear matriz grafica<input id="isCrearGrafica" type="checkbox" checked="checked" title="Marcar este check para habilitar crear la matriz grafica de dimension n*n" />
             <p id="sumaEsquinas">suma_numeros_esquinas = <code>n-(n-1) + n + ((n^2)-n-1) + (n^2)</code></p>
             <p>suma_numeros_esquinas = <code id="valoresEsquinas"></code></p>
         </div>
         <div style="display: inline-block" id="cuadrado"></div>
-        <div style="display: inline-block; vertical-align: top">
-            &nbsp;Validacion de matrices de dimension (n*n) menor e igual al numero dado y mayores que 1
+        <div id="divDemostracion" style="vertical-align: top" class="oculto">
+            &nbsp;Validacion de matrices de dimension <span id="dimensionMatriz"></span> menor e igual al numero dado y mayores que 1
             <ul id="ulPasosValidacion"></ul>
         </div>
         <script src="js/util.js"></script>

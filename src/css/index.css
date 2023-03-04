@@ -14,4 +14,12 @@ td{
 
 code{
     font-weight: bold;
+    font-size: 1.1rem;
+    line-height: 28px;
+    background-color: rgb(182, 183, 184);
+    color: #ffffff;
+}
+
+.oculto{
+    display: none;
 }
