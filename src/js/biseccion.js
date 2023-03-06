@@ -1,5 +1,7 @@
 const largoColumnas = 30; //... Largo maximo de decimales a mostrar
 const condicion = 0; //Tolerancia de error del 1%
+const isHtml = true; //.. True si se necesita que se muestre el resultado en la pagina HTML
+
 let lastValue = {
     Iteracion: 0,
     Xa: 0,
@@ -32,6 +34,13 @@ const metodo_biseccion = (Xa, Xb, fx) => {
 
     if (intervalo > 0) {
         console.log(`No es valido el intervalo: f(a) * f(b) = ${intervalo} ; y esto debe ser < 0 !!!`);
+
+        if (isHtml) {
+            const divResultados = document.getElementById('divResultados');
+            if (divResultados != null) {
+                divResultados.innerHTML = `No es valido el intervalo: f(a) * f(b) = ${intervalo} ; y esto debe ser < 0 !!!`;
+            }
+        }
         return;
     }
 
@@ -68,6 +77,12 @@ const metodo_biseccion = (Xa, Xb, fx) => {
 
     console.log('\n\nValores de ultima Iteración (hallar raiz):\n');
     console.log(`Iteracion: ${lastValue.Iteracion}\nXa :\t${lastValue.Xa}\nXb :\t${lastValue.Xb}\nfXa:\t${lastValue.fXa}\nfXb:\t${lastValue.fXb}\nXr :\t${lastValue.Xr} (raiz)\nfXr:\t${lastValue.fXr}\nEar:\t${lastValue.Ear}`);
+    if (isHtml) {
+        var selectedFn = document.getElementById('funciones');
+        var text = selectedFn.options[selectedFn.selectedIndex].text;
+
+        ultimoValor.innerHTML = `<h3>Ecuación: <b>${text}</b></h3><p>Iteración : ${lastValue.Iteracion}</p><p>Xa : ${lastValue.Xa}</p><p>Xb : ${lastValue.Xb}</p><p>f(Xa) : ${lastValue.fXa}</p><p>f(Xb) : ${lastValue.fXb}</p><p>Xr : ${lastValue.Xr} (raiz)</p><p>f(Xr) : ${lastValue.fXr}</p><p>Ear : ${lastValue.Ear}`;
+    }
 };
 
 const setlastValue = (iteracion, xa, xb, fxa, fxb, xr, fxr, ear) => {
@@ -111,17 +126,36 @@ const dibujarLineasDivisorias = () => {
  */
 const imprimir = (iteracion, xa, xb, fxa, fxb, xr, fxr, ear) => {
     try {
-        xa = fixed(xa);
-        xb = fixed(xb);
-        fxa = fixed(fxa);
-        fxb = fixed(fxb);
-        xr = fixed(xr);
-        fxr = fixed(fxr);
-        ear = fixed(ear);
+        xa = normalizar(fixed(xa));
+        xb = normalizar(fixed(xb));
+        fxa = normalizar(fixed(fxa));
+        fxb = normalizar(fixed(fxb));
+        xr = normalizar(fixed(xr));
+        fxr = normalizar(fixed(fxr));
+        ear = normalizar(fixed(ear));
+        let fxa_fxr = normalizar(fxa * fxr);
 
-        console.log(`${normalizar(iteracion)}\t${normalizar(xa)}\t${normalizar(xb)}\t${normalizar(xr)}\t${normalizar(fxa)}\t${normalizar(fxb)}\t${normalizar(fxr)}\t${normalizar(fxa * fxr)}\t${normalizar(ear)}`);
+        console.log(`${iteracion}\t${xa}\t${xb}\t${xr}\t${fxa}\t${fxb}\t${fxr}\t${fxa_fxr}\t${ear}`);
+
+        if (isHtml) {
+            imprimirHTML(iteracion, xa, xb, fxa, fxb, xr, fxr, fxa_fxr, ear);
+        }
     } catch (error) {
+        console.error(error);
         console.error(`Error: iteracion ${iteracion}, fxa * fxr = ${fxa * fxr}`);
+    }
+};
+
+const imprimirHTML = (iteracion, xa, xb, fxa, fxb, xr, fxr, fxa_fxr, ear) => {
+    const tabla = document.getElementById('resultados');
+
+    if (tabla != undefined) {
+        const tr = document.createElement('tr');
+
+        const tds = `<td>${iteracion}</td><td>${xa}</td><td>${xb}</td><td>${xr}</td><td>${fxa}</td><td>${fxb}</td><td>${fxr}</td><td>${fxa_fxr}</td><td>${ear}</td>`;
+        tr.innerHTML = tds;
+
+        tabla.appendChild(tr);
     }
 };
 
@@ -140,7 +174,6 @@ const normalizar = (valor) => {
 
         return `${valorString} ${' '.repeat(largoColumnas - valorString.length)}`;
     } catch (error) {
-        console.log(typeof valor);
         console.error(error);
     }
 };
@@ -150,27 +183,33 @@ let roundOff = (num, places) => {
     return Math.round(num * x) / x;
 };
 
+if (isHtml) {
+    const btnUltimaIteracion = document.getElementById('btnUltimaIteracion');
+
+    btnUltimaIteracion.addEventListener('click', (e) => {
+        //e.preventDefault();
+        //... Abrir modal
+    });
+}
+
 /**
  * Función a evaluar dentro de la biseccion, contiene la definicion de la funcion f(x), ej: Math.pow(x, 10) - 1;
  * @param {*} x valor a validar dentro de la f(x)
  * @returns resultado de la validacion de la funcion f(x)
  */
 const fx = (x) => {
-    //... f(x) = -2 + 7x -5x^2 + 6x^3
-    //return -2 + 7 * x - 5 * Math.pow(x, 2) + 6 * Math.pow(x, 3);
-
     //... f(x) = x^10 - 1
-    //return Math.pow(x, 10) - 1;
+    return Math.pow(x, 10) - 1;
+
+    //... f(x) = cos(1 + sqrt(x))
+    //return Math.cos(1 + Math.sqrt(x));
 
     //... f(x) = (1/5)x^5 - 3x^4 + 9x^2 + 1
     //return (1 / 5) * Math.pow(x, 5) - 3 * Math.pow(x, 4) + 9 * Math.pow(x, 2) + 1;
-
-    //... f(x) = cos(1 + sqrt(x))
-    return Math.cos(1 + Math.sqrt(x));
 };
 
-const Xa = 8; //... intervalo inferior
-const Xb = 15; //... intervalo superior
+let Xa = 0; //... intervalo inferior
+let Xb = 3; //... intervalo superior
 
 /**
  * Ejecucion de la funcion por el metodo de bisección

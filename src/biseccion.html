@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Metodo de bisección</title>
+        <link rel="stylesheet" href="css/biseccion.css" />
+        <link rel="stylesheet" href="css/modal.css" />
+    </head>
+    <body>
+        <section>
+            <h2>Metodo de biseccion:</h2>
+            Intervalo superior: <input type="number" id="intervalo_superior" value="0" /> Intervalo inferior: <input type="number" value="3" id="intervalo_inferior" /> Función:
+            <select name="funciones" id="funciones">
+                <option value="fx2">f(x) = x^10 - 1</option>
+                <option value="fx1">f(x) = cos(1 + sqrt(x))</option>
+                <option value="fx3">f(x) = (1/5)x^5 - 3x^4 + 9x^2 + 1</option>
+            </select>
+        </section>
+
+        <div id="openModal" class="modalDialog">
+            <div>
+                <a href="#close" title="Close" class="close">X</a>
+                <h2>Ultima iteración con raiz</h2>
+                <div id="ultimoValor"></div>
+            </div>
+        </div>
+        <div>
+            <a class="btn" href="#openModal" id="btnUltimaIteracion">Ver resultado final</a>
+        </div>
+        <div id="divResultados">
+            <table>
+                <thead id="encabezados">
+                    <tr>
+                        <th>Iteracion</th>
+                        <th>Xa</th>
+                        <th>Xb</th>
+                        <th>xr (valores raices)</th>
+                        <th>f(Xa)</th>
+                        <th>f(Xb)</th>
+                        <th>f(Xr)</th>
+                        <th>f(Xa)*f(Xr)</th>
+                        <th>Ear</th>
+                    </tr>
+                </thead>
+                <tbody id="resultados"></tbody>
+                <tfoot id="footer">
+                    <tr>
+                        <th>Iteracion</th>
+                        <th>Xa</th>
+                        <th>Xb</th>
+                        <th>xr (valores raices)</th>
+                        <th>f(Xa)</th>
+                        <th>f(Xb)</th>
+                        <th>f(Xr)</th>
+                        <th>f(Xa)*f(Xr)</th>
+                        <th>Ear</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <script src="js/biseccion.js"></script>
+    </body>
+</html>

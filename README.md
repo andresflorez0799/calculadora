@@ -2,6 +2,8 @@
 
 [Click aqui para usar la Calculadora](https://andresflorez0799.github.io/calculadora/src/index.html)
 
+[Click aqui para Metodo de bisección](https://andresflorez0799.github.io/calculadora/src/biseccion.html)
+
 <a href="https://github.com/andresflorez0799/calculadora" target="_blank">Click para ver el repo en Github</a>
 
 <hr />
@@ -13,8 +15,8 @@
 </p>
 <hr />
 
-
 ![image](https://user-images.githubusercontent.com/52682774/219882114-4947f7af-db41-42e3-ad8e-f29df1346122.png)
+
 <p align="center">
   <caption>Tomado de: 
   <a href="https://solucionesproblemas.com/error-absoluto-y-error-relativo/" target="_blank">https://solucionesproblemas.com</a>
