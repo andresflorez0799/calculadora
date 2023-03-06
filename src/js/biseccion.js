@@ -39,7 +39,7 @@ const metodo_biseccion = (Xa, Xb, fx) => {
         console.log(`No es valido el intervalo: f(a) * f(b) = ${intervalo} ; y esto debe ser < 0 !!!`);
 
         if (isHtml) {
-            const divResultados = document.getElementById('divResultados');
+            const divResultados = document.getElementById('resultados');
             if (divResultados != null) {
                 divResultados.innerHTML = `No es valido el intervalo: f(a) * f(b) = ${intervalo} ; y esto debe ser < 0 !!!`;
             }
