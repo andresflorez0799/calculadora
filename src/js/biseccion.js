@@ -2,6 +2,9 @@ const largoColumnas = 30; //... Largo maximo de decimales a mostrar
 const condicion = 0; //Tolerancia de error del 1%
 const isHtml = true; //.. True si se necesita que se muestre el resultado en la pagina HTML
 
+let Xa = 0; //... intervalo inferior
+let Xb = 3; //... intervalo superior
+
 let lastValue = {
     Iteracion: 0,
     Xa: 0,
@@ -183,23 +186,32 @@ let roundOff = (num, places) => {
     return Math.round(num * x) / x;
 };
 
-if (isHtml) {
-    const btnUltimaIteracion = document.getElementById('btnUltimaIteracion');
-
-    btnUltimaIteracion.addEventListener('click', (e) => {
-        //e.preventDefault();
-        //... Abrir modal
-    });
-}
-
 /**
  * Función a evaluar dentro de la biseccion, contiene la definicion de la funcion f(x), ej: Math.pow(x, 10) - 1;
  * @param {*} x valor a validar dentro de la f(x)
  * @returns resultado de la validacion de la funcion f(x)
  */
 const fx = (x) => {
+    const fnObject = {
+        1: function () {
+            return Math.pow(x, 10) - 1;
+        },
+        2: function () {
+            return Math.cos(1 + Math.sqrt(x));
+        },
+        3: function () {
+            return (1 / 5) * Math.pow(x, 5) - 3 * Math.pow(x, 4) + 9 * Math.pow(x, 2) + 1;
+        },
+    };
+
+    if (isHtml) {
+        var selectedFn = document.getElementById('funciones');
+        var valorFn = selectedFn.options[selectedFn.selectedIndex].value;
+        return fnObject[valorFn]();
+    } else return fnObject[1]();
+
     //... f(x) = x^10 - 1
-    return Math.pow(x, 10) - 1;
+    //return Math.pow(x, 10) - 1;
 
     //... f(x) = cos(1 + sqrt(x))
     //return Math.cos(1 + Math.sqrt(x));
@@ -208,10 +220,30 @@ const fx = (x) => {
     //return (1 / 5) * Math.pow(x, 5) - 3 * Math.pow(x, 4) + 9 * Math.pow(x, 2) + 1;
 };
 
-let Xa = 0; //... intervalo inferior
-let Xb = 3; //... intervalo superior
-
 /**
  * Ejecucion de la funcion por el metodo de bisección
  */
 metodo_biseccion(Xa, Xb, fx);
+
+if (isHtml) {
+    const changeIntervalo_superior = document.querySelector('#intervalo_superior');
+    const changeIntervalo_inferior = document.querySelector('#intervalo_inferior');
+    const changeFunciones = document.querySelector('#funciones');
+
+    changeIntervalo_superior.addEventListener('change', (e) => recalcular());
+    changeIntervalo_inferior.addEventListener('change', (e) => recalcular());
+    changeFunciones.addEventListener('change', (e) => recalcular());
+
+    const recalcular = () => {
+        if (isNaN(intervalo_superior.value) || isNaN(intervalo_inferior.value)) {
+            alert('El valor de los intervalos no son validos');
+        } else {
+            const resultados = document.querySelector('#resultados');
+            resultados.innerHTML = '';
+            Xa = parseInt(intervalo_superior.value);
+            Xb = parseInt(intervalo_inferior.value);
+
+            metodo_biseccion(Xa, Xb, fx);
+        }
+    };
+}
