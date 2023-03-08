@@ -43,7 +43,7 @@ const crearPasoValidacionItem = (n, vertice_a, vertice_b, vertice_c, vertice_d) 
 
     let texto = `cuando n es ${n} => `;
     if (n > 1) {
-        texto += `${vertice_a} + ${vertice_b} + ${vertice_c} + ${vertice_d} = ${suma}`;
+        texto += `<b>${vertice_a} + ${vertice_b} + ${vertice_c} + ${vertice_d} = <i class='valorSumaDetalle'>${suma}</i> <c>${esPrimo ? ' es Primo' : 'NO es Primo'}</c></b>`;
         valoresEsquinas.innerHTML = `${n}-(${n}-1) + ${n} + ((${n}^2)-${n}-1) + (${n}^2) entonces ${vertice_a} + ${vertice_b} + ${vertice_c} + ${vertice_d} = <b style='color:red;'> ${suma}</b> ${esPrimo ? ' es Primo' : 'No es Primo'}`;
         dimensionMatriz.innerHTML = `(n * n) => (${n} * ${n})`;
     }

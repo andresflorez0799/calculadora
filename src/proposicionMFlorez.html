@@ -8,19 +8,24 @@
         <link rel="stylesheet" href="css/index.css" />
     </head>
     <body>
-        <div>
-            <h2>
-                Número para validar la matriz de dimension (n *n):
-                <input id="numero" type="number" />
-            </h2>
-            Crear matriz grafica<input id="isCrearGrafica" type="checkbox" checked="checked" title="Marcar este check para habilitar crear la matriz grafica de dimension n*n" />
-            <p id="sumaEsquinas">suma_numeros_esquinas = <code>n-(n-1) + n + ((n^2)-n-1) + (n^2)</code></p>
-            <p>suma_numeros_esquinas = <code id="valoresEsquinas"></code></p>
-        </div>
-        <div style="display: inline-block" id="cuadrado"></div>
-        <div id="divDemostracion" style="vertical-align: top" class="oculto">
-            &nbsp;Validacion de matrices de dimension <span id="dimensionMatriz"></span> menor e igual al numero dado y mayores que 1
-            <ul id="ulPasosValidacion"></ul>
+        <section>
+            <div class="base">
+                <h2>
+                    Número para validar la matriz de dimension (n *n):
+                    <input id="numero" type="number" />
+                </h2>
+                Crear matriz grafica<input id="isCrearGrafica" type="checkbox" checked="checked" title="Marcar este check para habilitar crear la matriz grafica de dimension n*n" />
+                <p id="sumaEsquinas">suma_numeros_esquinas = <code>n-(n-1) + n + ((n^2)-n-1) + (n^2)</code></p>
+                <p>suma_numeros_esquinas = <code id="valoresEsquinas"></code></p>
+            </div>
+            <div style="display: inline-block" class="base" id="cuadrado"></div>
+            <div id="divDemostracion" style="vertical-align: top" class="oculto">
+                &nbsp;Validación de matrices de dimension <span id="dimensionMatriz"></span> menor e igual al número dado y mayores que 1
+                <ul id="ulPasosValidacion"></ul>
+            </div>
+        </section>
+        <div class="copyright">
+            <pre class="pre">Desarrollado por : <span class="code">Mairon Andres Florez Alvarez</span></pre>
         </div>
         <script src="js/util.js"></script>
         <script src="js/proposicionMFlorez.js"></script>

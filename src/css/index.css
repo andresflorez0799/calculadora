@@ -1,13 +1,63 @@
+@font-face {
+    font-family: VictorMono;
+    src: url(../fonts/VictorMono-ThinItalic.woff2);
+}
+
+body {
+    margin: 16px;
+    font-family: VictorMono;
+    background-color: var(--third);
+    color: var(--red);
+}
+
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --red:#332C39;
+    --resaltador: #ff1871;
+    --first: #6096B4;
+    --second: #93BFCF;
+    --third: #BDCDD6;
+    --four: #EEE9DA;
+    --five: #EEE9DA;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+}
+
+.base {
+    box-sizing: border-box;
+    background-color: var(--four);
+    margin-bottom: 24px;
+    border-radius: 8px;
+    padding: 16px 16px;
+}
+
+section{
+    position: relative;
+}
+
+code{
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-family: 'Calibri';
+    font-weight: 100;
+    font-size: 11px;
+}
+
+.inactive {
+    display: none;
+}
+
 td{
-    border: 1px solid #1a1a1a;
-    padding: 8px 8px;
-    color: #161616;
+    border: 0.5px dotted var(--black);
+    padding: 6px 6px;
     font-weight: normal;
     text-align: center;
 }
 
 .IsPrimo{
-    background-color: yellow;
+    background-color: var(--first);
     font-weight: bold;
     color: #1d1d1d;
 }
@@ -16,10 +66,54 @@ code{
     font-weight: bold;
     font-size: 1.1rem;
     line-height: 28px;
-    background-color: rgb(182, 183, 184);
+    background-color: var(--first);
     color: #ffffff;
 }
 
 .oculto{
     display: none;
+}
+
+h2{
+    font-size: 1.2rem;
+}
+
+input{
+    background-color: var(--third);
+    border: 0.5px solid var(--first);
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 4px 6px;
+    font-weight: 900;
+}
+
+.copyright{
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    position: static;
+}
+
+html body div.copyright pre.pre span.code {
+    color: var(--first);
+    font-size: 20px !important;
+}
+
+li{
+    margin: 4px;
+}
+
+b{
+    background-color: var(--first);
+    padding: 2px 8px;
+    border-radius: 2px;
+    border-color: var(--five);
+}
+
+.valorSumaDetalle{
+    color: var(--resaltador);
+}
+
+c{
+    font-size: 0.7rem;
 }
