@@ -39,6 +39,11 @@ numero.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         cuadrado.innerHTML = '';
         crearCuadricula(numero.value);
+        cuadrado.style.display = 'inline-block';
         console.log('keypress Termine con el numero: ' + numero.value);
     }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    cuadrado.style.display = 'none';
 });

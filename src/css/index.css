@@ -13,13 +13,13 @@ body {
 :root {
     --white: #ffffff;
     --black: #000000;
-    --red:#332C39;
+    --red: #332c39;
     --resaltador: #ff1871;
-    --first: #6096B4;
-    --second: #93BFCF;
-    --third: #BDCDD6;
-    --four: #EEE9DA;
-    --five: #EEE9DA;
+    --first: #6096b4;
+    --second: #93bfcf;
+    --third: #bdcdd6;
+    --four: #eee9da;
+    --five: #eee9da;
     --sm: 14px;
     --md: 16px;
     --lg: 18px;
@@ -33,11 +33,11 @@ body {
     padding: 16px 16px;
 }
 
-section{
+section {
     position: relative;
 }
 
-code{
+code {
     padding: 4px 8px;
     border-radius: 5px;
     font-family: 'Calibri';
@@ -49,20 +49,20 @@ code{
     display: none;
 }
 
-td{
+td {
     border: 0.5px dotted var(--black);
     padding: 6px 6px;
     font-weight: normal;
     text-align: center;
 }
 
-.IsPrimo{
+.IsPrimo {
     background-color: var(--first);
     font-weight: bold;
     color: #1d1d1d;
 }
 
-code{
+code {
     font-weight: bold;
     font-size: 1.1rem;
     line-height: 28px;
@@ -70,15 +70,16 @@ code{
     color: #ffffff;
 }
 
-.oculto{
+.oculto {
     display: none;
 }
 
-h2{
+h2 {
     font-size: 1.2rem;
 }
 
-input{
+input,
+select {
     background-color: var(--third);
     border: 0.5px solid var(--first);
     text-decoration: none;
@@ -87,7 +88,7 @@ input{
     font-weight: 900;
 }
 
-.copyright{
+.copyright {
     bottom: 0px;
     left: 0;
     width: 100%;
@@ -99,21 +100,64 @@ html body div.copyright pre.pre span.code {
     font-size: 20px !important;
 }
 
-li{
+li {
     margin: 4px;
 }
 
-b{
+b {
     background-color: var(--first);
     padding: 2px 8px;
     border-radius: 2px;
     border-color: var(--five);
 }
 
-.valorSumaDetalle{
+.valorSumaDetalle {
     color: var(--resaltador);
 }
 
-c{
+c {
     font-size: 0.7rem;
+}
+
+.botones {
+    border: 1px solid var(--third);
+    padding: 6px 8px;
+    margin-top: 16px;
+    display: inline-block;
+    border-radius: 5px;
+    color: #1d1d1d;
+    font-size: 14px;
+    font-weight: 200;
+    background-color: var(--third);
+}
+
+.botones > a {
+    text-decoration: none;
+}
+
+a {
+    margin-top: 16px;
+    padding: 6px 6px;
+    font-size: 0.7rem;
+}
+
+a:hover {
+    border: 1px solid var(--third);
+    border-radius: 5px;
+    color: #1d1d1d;
+    font-weight: 200;
+    background-color: var(--third);
+}
+
+table {
+    font-size: 0.8rem;
+    font-weight: lighter;
+    border: 1px solid var(--black);
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+th {
+    padding: 8px 4px;
+    font-size: 1rem;
 }

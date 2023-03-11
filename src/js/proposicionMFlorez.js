@@ -87,6 +87,11 @@ numero.addEventListener('keypress', function (e) {
         cuadrado.innerHTML = '';
         crearCuadricula(numero.value);
         encontrarSumaEsquinasEsPrimo(numero.value);
+        cuadrado.style.display = 'inline-block';
         console.log('keypress Termine con el numero: ' + numero.value);
     }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    cuadrado.style.display = 'none';
 });
