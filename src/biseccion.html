@@ -7,6 +7,12 @@
         <title>Metodo de bisección</title>
         <link rel="stylesheet" href="css/index.css" />
         <link rel="stylesheet" href="css/modal.css" />
+        <style>
+            #tblResultados > tbody > tr:last-child {
+                font-weight: bold;
+                animation: twinkle 0.6s infinite alternate;
+            }
+        </style>
     </head>
     <body>
         <section class="base">
@@ -31,12 +37,12 @@
             </div>
             <br />
             <div>
-                <a href="https://github.com/andresflorez0799/calculadora/blob/main/src/js/biseccion.js" target="_blank">Ver repositorio en github</a>
+                <a class="github" href="https://github.com/andresflorez0799/calculadora/blob/main/src/js/biseccion.js" target="_blank">Ver repositorio en github</a>
             </div>
         </section>
 
         <div id="divResultados">
-            <table>
+            <table id="tblResultados">
                 <thead id="encabezados">
                     <tr>
                         <th>Iteracion</th>

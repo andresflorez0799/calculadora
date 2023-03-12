@@ -135,13 +135,13 @@ c {
     text-decoration: none;
 }
 
-a {
+a.github {
     margin-top: 16px;
     padding: 6px 6px;
     font-size: 0.7rem;
 }
 
-a:hover {
+a.github:hover {
     border: 1px solid var(--third);
     border-radius: 5px;
     color: #1d1d1d;
@@ -160,4 +160,14 @@ table {
 th {
     padding: 8px 4px;
     font-size: 1rem;
+}
+
+@keyframes twinkle {
+    0% {
+        background: #58fc0c;
+        font-weight: bolder;
+    }
+    100% {
+        background: transparent;
+    }
 }
