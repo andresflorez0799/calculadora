@@ -1,0 +1,162 @@
+<html>
+    <head>
+        <title>Proposición_MFlorez Pseudocodigo</title>
+        <style type="text/css">
+            .SSD {
+                color: #ffffff;
+                background-color: #000000;
+            }
+            .SS0 {
+                color: #000000;
+                background-color: #ffffff;
+            }
+            .SS1 {
+                color: #000000;
+                background-color: #ffffff;
+            }
+            .SS2 {
+                font-style: italic;
+                color: #969696;
+                background-color: #ffffff;
+            }
+            .SS3 {
+                font-style: italic;
+                color: #0000ff;
+                background-color: #ffffff;
+            }
+            .SS4 {
+                color: #8e6b23;
+                background-color: #ffffff;
+            }
+            .SS5 {
+                font-weight: bold;
+                color: #000080;
+                background-color: #ffffff;
+            }
+            .SS6 {
+                color: #ff0000;
+                background-color: #ffffff;
+            }
+            .SS7 {
+                color: #ff0000;
+                background-color: #ffffff;
+            }
+            .SS8 {
+                color: #db70db;
+                background-color: #ffffff;
+            }
+            .SS9 {
+                color: #238e23;
+                background-color: #ffffff;
+            }
+            .SS10 {
+                font-weight: bold;
+                color: #000000;
+                background-color: #ffffff;
+            }
+            .SS11 {
+                color: #000000;
+                background-color: #ffffff;
+            }
+            .SS12 {
+                color: #ff0000;
+                background-color: #f0f0f0;
+            }
+            .SS13 {
+                color: #000000;
+                background-color: #ffffff;
+            }
+            .SS14 {
+                color: #db70db;
+                background-color: #ffffff;
+            }
+            .SS15 {
+                color: #238e23;
+                background-color: #ffffff;
+            }
+            .SS16 {
+                color: #000080;
+                background-color: #ffffff;
+            }
+            .SS17 {
+                color: #42426f;
+                background-color: #ffffff;
+            }
+            .SS18 {
+                color: #ff0000;
+                background-color: #ffffff;
+            }
+            .SS19 {
+                color: #000000;
+                background-color: #bfd8d8;
+            }
+            .SS34 {
+                font-weight: bold;
+                color: #ff0000;
+                background-color: #f0f0ff;
+            }
+            .SS35 {
+                font-weight: bold;
+                color: #800000;
+                background-color: #ffffff;
+            }
+            html {
+                font-size: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <pre>
+<SPAN class="SS5">Algoritmo</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">Proposición_MFlorez</SPAN><SPAN class="SS0"> 
+    
+    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"La suma de los elementos a[1,1], a[1,n], a[n,1], a[n^2,n^2]"</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"de una matriz de dimensión (n * n) con los números"</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"naturales mayores a 1 consecutivos y ordenados por renglon"</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"y columna de la matriz nunca será igual a un número PRIMO"</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">""</SPAN><SPAN class="SS0">
+    
+    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Ingrese un número que define la matriz (n*n)"</SPAN><SPAN class="SS0">
+    
+    </SPAN><SPAN class="SS5">Leer</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">dimension_matriz</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS2">// Dimension matriz (n*n)</SPAN><SPAN class="SS0">
+    
+    </SPAN><SPAN class="SS5">Si</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">dimension_matriz</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">&gt;</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">1</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Entonces</SPAN><SPAN class="SS0">
+        </SPAN><SPAN class="SS5">Definir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">vertice_a</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Como</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Entero</SPAN><SPAN class="SS0">
+        </SPAN><SPAN class="SS5">Definir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">vertice_b</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Como</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Entero</SPAN><SPAN class="SS0">
+        </SPAN><SPAN class="SS5">Definir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">vertice_c</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Como</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Entero</SPAN><SPAN class="SS0">
+        </SPAN><SPAN class="SS5">Definir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">vertice_d</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Como</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Entero</SPAN><SPAN class="SS0">
+        
+        </SPAN><SPAN class="SS11">vertice_a</SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS11">dimension_matriz</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">-</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">(</SPAN><SPAN class="SS11">dimension_matriz</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">-</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">1</SPAN><SPAN class="SS10">);</SPAN><SPAN class="SS0">                         </SPAN><SPAN class="SS2">//Extremo superior izquierdo de la matriz</SPAN><SPAN class="SS0">
+        </SPAN><SPAN class="SS11">vertice_b</SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS11">dimension_matriz</SPAN><SPAN class="SS10">;</SPAN><SPAN class="SS0">                                                 </SPAN><SPAN class="SS2">//Extremo superior derecho de la matriz</SPAN><SPAN class="SS0">
+        </SPAN><SPAN class="SS11">vertice_c</SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS11">dimension_matriz</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">*</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">dimension_matriz</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">-</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">(</SPAN><SPAN class="SS11">dimension_matriz</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">-</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">1</SPAN><SPAN class="SS10">);</SPAN><SPAN class="SS0">        </SPAN><SPAN class="SS2">//Extremo inferior izquierdo de la matriz</SPAN><SPAN class="SS0">
+        </SPAN><SPAN class="SS11">vertice_d</SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS11">dimension_matriz</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">*</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">dimension_matriz</SPAN><SPAN class="SS10">;</SPAN><SPAN class="SS0">                                 </SPAN><SPAN class="SS2">//Extremo inferior derecho de la matriz</SPAN><SPAN class="SS0">
+        
+        </SPAN><SPAN class="SS11">suma_verfices</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">=</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">vertice_a</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">+</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">vertice_b</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">+</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">vertice_c</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">+</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">vertice_d</SPAN><SPAN class="SS10">;</SPAN><SPAN class="SS0">              </SPAN><SPAN class="SS2">// Suma vertices</SPAN><SPAN class="SS0">
+        
+        </SPAN><SPAN class="SS2">// Validar si Primo</SPAN><SPAN class="SS0">
+        </SPAN><SPAN class="SS11">contador</SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS4">0</SPAN><SPAN class="SS10">;</SPAN><SPAN class="SS0">
+        </SPAN><SPAN class="SS5">Para</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">i</SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS4">1</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Hasta</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">suma_verfices</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Hacer</SPAN><SPAN class="SS0">
+            </SPAN><SPAN class="SS5">si</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">suma_verfices</SPAN><SPAN class="SS10">%</SPAN><SPAN class="SS11">i</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">=</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">0</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Entonces</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS11">contador</SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS11">contador</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">+</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">1</SPAN><SPAN class="SS10">;</SPAN><SPAN class="SS0">
+            </SPAN><SPAN class="SS5">FinSi</SPAN><SPAN class="SS0">
+        </SPAN><SPAN class="SS5">FinPara</SPAN><SPAN class="SS0">
+        
+        </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Los vertices de la matriz ("</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">dimension_matriz</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"*"</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">dimension_matriz</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">") son: "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">vertice_a</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">", "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">vertice_b</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">", "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS11">vertice_c</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">", "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS11">vertice_d</SPAN><SPAN class="SS0">
+        </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"La suma de las vertices de la matriz es :"</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">suma_verfices</SPAN><SPAN class="SS10">;</SPAN><SPAN class="SS0">
+        
+        </SPAN><SPAN class="SS2">// ¿Es Primo?</SPAN><SPAN class="SS0">
+        </SPAN><SPAN class="SS5">si</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">contador</SPAN><SPAN class="SS10">=</SPAN><SPAN class="SS4">2</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Entonces</SPAN><SPAN class="SS0">
+            </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"La Suma da un número primo"</SPAN><SPAN class="SS10">;</SPAN><SPAN class="SS0">
+        </SPAN><SPAN class="SS5">SiNo</SPAN><SPAN class="SS0">
+            </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"La Suma NO es un número primo"</SPAN><SPAN class="SS0">
+        </SPAN><SPAN class="SS5">FinSi</SPAN><SPAN class="SS0">
+        
+    </SPAN><SPAN class="SS5">SiNo</SPAN><SPAN class="SS0">
+        </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Dimension no valida."</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS5">Fin</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Si</SPAN><SPAN class="SS0">
+    
+</SPAN><SPAN class="SS5">FinAlgoritmo</SPAN><SPAN class="SS0">
+
+    </SPAN>
+</PRE>
+    </body>
+</html>

@@ -35,7 +35,7 @@ const metodo_biseccion = (Xa, Xb, fx) => {
     let intervalo = fx(Xa) * fx(Xb); //... Se debe validar que el intervalo dado inicialmente es valido, para ello f(Xa) * f(Xb) < 0
     console.log(`Condicion intervalo: f(a) * f(b) = ${intervalo} ${intervalo <= 0 ? ' ; Intervalo valido' : ' ; El intervalo no es valido'}\n`);
 
-    if (intervalo > 0) {
+    if (intervalo > 0 && 1 == 2) {
         console.log(`No es valido el intervalo: f(a) * f(b) = ${intervalo} ; y esto debe ser < 0 !!!`);
 
         if (isHtml) {
@@ -202,11 +202,17 @@ const fx = (x) => {
         3: function () {
             return (1 / 5) * Math.pow(x, 5) - 3 * Math.pow(x, 4) + 9 * Math.pow(x, 2) + 1;
         },
+        4: function () {
+            //return 4 * Math.pow(x, 2) - 5 * x; //4x^2 - 5x
+            return Math.e * Math.pow(x, -1) - 1.5 * x; //4x^2 - 5x
+        },
     };
 
     if (isHtml) {
         var selectedFn = document.getElementById('funciones');
         var valorFn = selectedFn.options[selectedFn.selectedIndex].value;
+
+        valorFn = 4;
         return fnObject[valorFn]();
     } else return fnObject[1]();
 

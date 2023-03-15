@@ -6,9 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Matriz primos</title>
         <link rel="stylesheet" href="css/index.css" />
+        <link rel="stylesheet" href="css/proposicionMFlorez.css" />
         <style>
             .valIteracion {
-                animation: twinkle 0.6s infinite alternate;
+                animation: twinkle 1s infinite alternate;
             }
         </style>
     </head>
@@ -20,12 +21,16 @@
                     <input id="numero" type="number" />
                 </h2>
                 Crear matriz grafica<input id="isCrearGrafica" type="checkbox" checked="checked" title="Marcar este check para habilitar crear la matriz grafica de dimension n*n" />
+                <a href="proposicionMFlorezPseudocodigo.html" target="_blank">Ver Pseudocodigo generado por PSeint</a>
+                <a href="proposicionMFlorezPseudocodigoImagen.html" target="_blank">Ver Pseudocodigo en diagrama</a>
+                <a href="proposicionMFlorezPresentacion.html" target="_blank">Ver Proposición</a>
                 <p id="sumaEsquinas">suma_numeros_esquinas = <code>n-(n-1) + n + ((n^2)-n-1) + (n^2)</code></p>
                 <p>suma_numeros_esquinas = <code id="valoresEsquinas"></code></p>
+                Click aqui para ir a <a href="https://github.com/andresflorez0799/calculadora/blob/main/src/js/proposicionMFlorez.js" target="_blank">Repositorio en Github</a>
             </div>
             <div class="base" id="cuadrado"></div>
             <div id="divDemostracion" style="vertical-align: top" class="oculto">
-                &nbsp;Validación de matrices de dimension <span id="dimensionMatriz"></span> menor e igual al número dado y mayores que 1
+                &nbsp;Validación de matrices de dimensión <span id="dimensionMatriz"></span> menor e igual al número dado y mayores que 1
                 <ul id="ulPasosValidacion"></ul>
             </div>
         </section>

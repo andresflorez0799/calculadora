@@ -1,12 +1,12 @@
 @font-face {
     font-family: VictorMono;
-    src: url(../fonts/VictorMono-ThinItalic.woff2);
+    src: url(../fonts/VictorMono-SemiBold.woff2);
 }
 
 body {
     margin: 16px;
     font-family: VictorMono;
-    background-color: var(--third);
+    /*background-color: var(--third);*/
     color: var(--red);
 }
 
@@ -158,16 +158,36 @@ table {
 }
 
 th {
-    padding: 8px 4px;
+    padding: 8px 6px;
     font-size: 1rem;
 }
 
 @keyframes twinkle {
     0% {
         background: #58fc0c;
-        font-weight: bolder;
+        color: #f74b35;
     }
     100% {
         background: transparent;
+        color: inherit;
     }
+}
+@keyframes resaltar {
+    0% {
+        /*background: #58fc0c;*/
+        color: #f74b35;
+        font-weight: bolder;
+    }
+    100% {
+        /*background: transparent;*/
+        color: inherit;
+        font-weight: inherit;
+    }
+}
+
+.resultar {
+    animation: resaltar 1s infinite alternate;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px dashed #f74b35;
 }

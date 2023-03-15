@@ -3,6 +3,7 @@ const sumaEsquinas = document.getElementById('sumaEsquinas');
 const ulPasosValidacion = document.getElementById('ulPasosValidacion');
 const valoresEsquinas = document.getElementById('valoresEsquinas');
 const isCrearGrafica = document.getElementById('isCrearGrafica');
+let numerosMagicos = [];
 
 const encontrarSumaEsquinasEsPrimo = (numberFin) => {
     let conteo = 0;
@@ -24,11 +25,15 @@ const encontrarSumaEsquinasEsPrimo = (numberFin) => {
 
 const sumaEsquinasCuadricula = (n) => {
     n = parseInt(n);
-
     let a1 = n - (n - 1);
     let a2 = n;
     let a3 = n * n - (n - 1);
     let a4 = n * n;
+
+    numerosMagicos[0] = a1;
+    numerosMagicos[1] = a2;
+    numerosMagicos[2] = a3;
+    numerosMagicos[3] = a4;
 
     crearPasoValidacionItem(n, a1, a2, a3, a4);
 
@@ -74,6 +79,7 @@ const crearCuadricula = (number) => {
                     td = document.createElement('td');
                     if (isPrimo(contador)) td.classList.add('IsPrimo');
                     td.innerHTML = contador;
+                    if (numerosMagicos.includes(contador)) td.classList.add('resultar');
                     tr.appendChild(td);
                 }
                 cuadrado.appendChild(tr);
@@ -85,8 +91,8 @@ numero.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         ulPasosValidacion.innerHTML = '';
         cuadrado.innerHTML = '';
-        crearCuadricula(numero.value);
         encontrarSumaEsquinasEsPrimo(numero.value);
+        crearCuadricula(numero.value);
         cuadrado.style.display = 'inline-block';
         console.log('keypress Termine con el numero: ' + numero.value);
     }
@@ -94,4 +100,13 @@ numero.addEventListener('keypress', function (e) {
 
 document.addEventListener('DOMContentLoaded', () => {
     cuadrado.style.display = 'none';
+    numerosMagicos = [];
+});
+
+isCrearGrafica.addEventListener('click', function (e) {
+    if (isCrearGrafica.checked) {
+        crearCuadricula(numero.value);
+    } else {
+        cuadrado.innerHTML = '';
+    }
 });
